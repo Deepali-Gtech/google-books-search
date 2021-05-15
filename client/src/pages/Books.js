@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Table from "../components/Table";
+import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
 
 class Books extends Component {
@@ -28,9 +28,10 @@ class Books extends Component {
         <div class="row">
           <input class="col" id="searchText" placeholder="search criteria"></input>
           <button className="btn btn-info col" onClick={this.handleSearch}>Search</button>
+          <a className="btn btn-info col" href="/saved">Saved Books</a>
         </div>
         <br />
-        <Table results={this.state.books} />
+        <SearchResults results={this.state.books} />
       </div>
     );
   }

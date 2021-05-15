@@ -3,7 +3,7 @@ import "./style.css";
 import API from "../../utils/API";
 import "bootstrap/dist/css/bootstrap.min.css"
 
-class Table extends Component {
+class SearchResults extends Component {
   constructor(props) {
     super(props);
     
@@ -64,4 +64,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default SearchResults;
