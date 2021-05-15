@@ -28,7 +28,7 @@ class Books extends Component {
         <div class="row">
           <input class="col" id="searchText" placeholder="search criteria"></input>
           <button className="btn btn-info col" onClick={this.handleSearch}>Search</button>
-          <a className="btn btn-info col" href="/saved">Saved Books</a>
+          <a className="btn btn-info col"  href="/saved">Saved Books</a>
         </div>
         <br />
         <SearchResults results={this.state.books} />

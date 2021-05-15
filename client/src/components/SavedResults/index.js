@@ -3,20 +3,11 @@ import "./style.css";
 import API from "../../utils/API";
 import "bootstrap/dist/css/bootstrap.min.css"
 
-class SearchResults extends Component {
+class SavedResults extends Component {
   constructor(props) {
     super(props);
     
   }
-
-  handleSave = (element) => {
-    API.saveBook(element.volumeInfo.title, element.volumeInfo.imageLinks.smallThumbnail, element.volumeInfo.authors, element.volumeInfo.description, element.volumeInfo.infoLink )
-      .then(res => {
-        alert("Book Saved");
-      }
-      )
-      .catch(err => console.log(err));
-  };
 
   render() {
     //if (props.results) {
@@ -39,12 +30,12 @@ class SearchResults extends Component {
               this.props.results &&
               this.props.results.map( (element) => {
                 return <tr>
-                  <td><img src={element.volumeInfo.imageLinks.smallThumbnail} alt="" /></td>
-                  <td>{element.volumeInfo.title}</td>
-                  <td>{element.volumeInfo.authors}</td>
-                  <td>{element.volumeInfo.description}</td>
-                  <td><a href={element.volumeInfo.infoLink} class="btn btn-info" target="_blank">View</a></td>
-                  <td><button onClick={() => this.handleSave(element)}>Save</button></td>
+                  <td><img src={element.image} alt="" /></td>
+                  <td>{element.title}</td>
+                  <td>{element.authors}</td>
+                  <td>{element.description}</td>
+                  <td><a href={element.link} class="btn btn-info" target="_blank">View</a></td>
+                  <td></td>
                 </tr>;
               })
             }
@@ -58,4 +49,4 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults;
+export default SavedResults;
