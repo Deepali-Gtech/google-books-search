@@ -9,9 +9,11 @@ export default {
     var url = "https://www.googleapis.com/books/v1/volumes?q=" + searchText + "&key=" + API_KEY;
     return axios.get(url);
   },
-  saveBook: function (title, description) {
+  saveBook: function (title, smallThumbnail, authors, description) {
     return axios.post('/api/books', {
       title: title,
+      image: smallThumbnail,
+      authors: authors,
       description: description
     });
   },

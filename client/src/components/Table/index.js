@@ -16,7 +16,7 @@ class Table extends Component {
   };
 
   handleSave = (element) => {
-    API.saveBook(element.volumeInfo.title, element.volumeInfo.description)
+    API.saveBook(element.volumeInfo.title, element.volumeInfo.imageLinks.smallThumbnail, element.volumeInfo.authors, element.volumeInfo.description )
       .then(res => {
         alert("Book Saved");
       }
