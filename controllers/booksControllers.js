@@ -2,7 +2,7 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
+findAll: function(req, res) {
     db.Book
       .find(req.query)
       .sort({ date: -1 })
