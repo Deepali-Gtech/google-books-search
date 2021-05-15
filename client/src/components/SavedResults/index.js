@@ -8,6 +8,15 @@ class SavedResults extends Component {
     super(props);
     
   }
+  handleDelete = (element) => {
+    API.removeBook(element._id)
+      .then(res => {
+        alert("Book Removed");
+        window.location.reload();
+      }
+      )
+      .catch(err => console.log(err));
+  };
 
   render() {
     //if (props.results) {
@@ -35,7 +44,7 @@ class SavedResults extends Component {
                   <td>{element.authors}</td>
                   <td>{element.description}</td>
                   <td><a href={element.link} class="btn btn-info" target="_blank">View</a></td>
-                  <td></td>
+                  <td><button onClick={() => this.handleDelete(element)}>Delete</button></td>
                 </tr>;
               })
             }
