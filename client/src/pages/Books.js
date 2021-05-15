@@ -9,10 +9,6 @@ class Books extends Component {
     matchCount: 0
   };
 
-  componentDidMount() {
-    //
-  }
-
   handleSearch = () => {
     let searchText = document.getElementById('searchText').value;
     API.searchBooks(searchText)
