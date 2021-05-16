@@ -38,8 +38,14 @@ class SearchResults extends Component {
             {
               this.props.results &&
               this.props.results.map( (element) => {
+                let image;
+                if(element.volumeInfo.imageLinks) {
+                  image = <img src={element.volumeInfo.imageLinks.smallThumbnail} alt="" />;
+                } else {
+                  image = "";
+                }
                 return <tr>
-                  <td><img src={element.volumeInfo.imageLinks.smallThumbnail} alt="" /></td>
+                  <td>{image}</td>
                   <td>{element.volumeInfo.title}</td>
                   <td>{element.volumeInfo.authors}</td>
                   <td>{element.volumeInfo.description}</td>

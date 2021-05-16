@@ -22,6 +22,12 @@ class Books extends Component {
   };
 
   render() {
+    let results;
+    if(this.state.books) {
+      results = <SearchResults results={this.state.books} />;
+    } else {
+      results = "";
+    }
     return (
 
       <div class="container" >
@@ -31,7 +37,7 @@ class Books extends Component {
           <a className="btn btn-info col"  href="/saved">Saved Books</a>
         </div>
         <br />
-        <SearchResults results={this.state.books} />
+        {results}
       </div>
     );
   }
