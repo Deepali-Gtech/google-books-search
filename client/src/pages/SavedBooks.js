@@ -27,8 +27,9 @@ class SavedBooks extends Component {
 
   render() {
     return (
-
+      
       <div class="container" >
+        <a className="btn btn-info col"  href="/">Go Back to search</a>
         <br />
         <SavedResults results={this.state.books} />
       </div>
